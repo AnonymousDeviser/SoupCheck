@@ -2,9 +2,13 @@
 # SoupCheck v1.1.0
 #==============
 # Developer Team: http://www.twitter.com/AnonymousDev_
-# Source Code: http://www.github.com/AnonymousDeviser
+# Source Code: http://www.github.com/AnonymousDeviser/SoupCheck
 #==============
 
 # This integer is a number of phases that the system is check player
 # I'm recommended 4 or 3 phases
 fases: 4
+
+# This value is a number of damage (multiplied by two)
+# I'm recommended 7.0(3.5 Hearts) or 8.0(4 Hearths)
+dano: 7.0
