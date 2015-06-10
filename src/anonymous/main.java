@@ -16,6 +16,7 @@ public class main extends JavaPlugin implements Listener {
 	public HashMap<Player, ItemStack[]> armor = new HashMap<Player, ItemStack[]>();
 	public int task;
 	public int fases = getConfig().getInt("fases");
+	public double damage = getConfig().getDouble("dano");
 	
 	public void onEnable(){
 		Bukkit.getServer().getPluginManager().registerEvents(this, this);
