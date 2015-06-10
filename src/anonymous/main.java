@@ -16,25 +16,34 @@ public class main extends JavaPlugin implements Listener {
 	public HashMap<Player, ItemStack[]> armor = new HashMap<Player, ItemStack[]>();
 	public int task;
 	public int fases = getConfig().getInt("fases");
-	public double damage = getConfig().getDouble("dano");
+	public double dano = getConfig().getDouble("dano");
+	public int tempo = getConfig().getInt("tempo");
 	
 	public void onEnable(){
 		Bukkit.getServer().getPluginManager().registerEvents(this, this);
 		saveDefaultConfig();
 	}
 	
-	public void check(Player tester, Player sender){
+	@SuppressWarnings("deprecation")
+	public void check(final Player tester, Player sender){
 		if(inCheck(sender) || inCheck(tester)){
 			return;
 		}
 		addCheck(tester, sender);
 		inventoryManager(tester, false);
 		
-		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(this, new Runnable() {
+		final double damage = dano;
+		
+		task = Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(this, new Runnable() {
+			int phases = fases;
 			public void run() {
-				
+				tester.damage(damage);
+				if(phases == 0){
+					Bukkit.getServer().getScheduler().cancelTask(task);
+				}
+				phases -= 1;
 			}
-		}, 0L, 20L);
+		}, 0L, tempo * 20L);
 	}
 	
 	public Player addCheck(Player tester, Player sender){
