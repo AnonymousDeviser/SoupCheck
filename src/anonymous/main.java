@@ -23,7 +23,6 @@ public class main extends JavaPlugin implements Listener {
 		saveDefaultConfig();
 	}
 	
-	@SuppressWarnings("deprecation")
 	public void check(Player tester, Player sender){
 		if(inCheck(sender) || inCheck(tester)){
 			return;
