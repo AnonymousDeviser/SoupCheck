@@ -1,0 +1,10 @@
+#==============
+# SoupCheck v1.1.0
+#==============
+# Developer Team: http://www.twitter.com/AnonymousDev_
+# Source Code: http://www.github.com/AnonymousDeviser
+#==============
+
+# This integer is a number of phases that the system is check player
+# I'm recommended 4 or 3 phases
+fases: 4
