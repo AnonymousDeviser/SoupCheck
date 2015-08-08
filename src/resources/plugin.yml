@@ -1,6 +1,6 @@
 name: SoupCheck
 main: anonymous.main
-authors: [AnonymousDev_, #DevTeam]
+authors: [AnonymousDev_, DevTeam]
 version: 1.1.0
 commands:
    soupcheck:
